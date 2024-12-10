@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@700&display=swap" rel="stylesheet">
+
+    <title>STRAWBERRY PLANT DISEASE PREDICTION</title>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family:'poppins',sans-serif;
+
+        }
+
+        .carousel-inner img {
+            height: 70vh;
+        }
+
+        form {
+            display: flex;
+            height: 85vh;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            width: 60%;
+            text-align: center;
+            margin: auto;
+        }
+
+
+        .details h2 {
+            
+            position: relative;
+            top: 100px;
+            margin: auto;
+            color: rgb(18, 231, 231);
+            font-size: 3rem;
+        }
+
+        label:hover {
+            transform: scale(1.03);
+        }
+
+        .details h2 {
+            /* margin-bottom: 300px; */
+            position: relative;
+            top: 100px;
+            margin: auto;
+            color: rgb(18, 231, 231);
+            font-size: 3rem;
+
+        }
+
+        .gallery-h1 h1 {
+
+            background-color: rgb(44, 43, 43);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+
+        }
+
+
+
+
+
+        .details h1 {
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: rgb(45, 47, 49);
+        }
+
+
+        .upload {
+
+            font-size: 20px;
+            background-color: rgb(255, 252, 252);
+            border-radius: 20px;
+            outline: none;
+            width: 315px;
+            color: rgb(0, 0, 0);
+            border: 3px solid rgb(45, 47, 49);
+            margin-right:80px;
+
+
+
+        }
+
+        ::-webkit-file-upload-button {
+            color: white;
+            padding: 20px;
+            border: 2px solid rgb(129, 129, 129);
+            background-color: rgb(129, 129, 129);
+            border-radius: 15px;
+
+        }
+
+        ::-webkit-file-upload-button:hover {
+            border-radius: 20px;
+            border: 2px solid rgb(177, 174, 174);
+
+
+        }
+
+
+
+        input[type="submit"] {
+            position: absolute;
+            margin-top: 160px;
+            margin-left: 310px;
+            padding: 15px 35px;
+            background-color:#93E9BE;
+            border-radius: 15px;
+            color: black;
+            font-size: 1.5rem;
+            border: 4px solid rgb(0, 0, 0);
+        }
+
+        .carousel-caption {
+            background: rgba(24, 25, 26, 0.5);
+            border-radius: 10px;
+        }
+
+
+
+        .carousel-caption h3 {
+
+
+            font-family: 'Rowdies', cursive;
+            color: yellow;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+
+        }
+
+        .carousel-caption p {
+            padding: 7px;
+
+
+        }
+
+        .img-thumbnail {
+            height: 300px;
+        }
+
+        .Content-h5 {
+
+            padding: 15px;
+            background-color: rgb(153, 156, 150);
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 25px;
+        }
+
+
+        @media only screen and (max-width: 325px) {
+            body {
+                font-size: x-small;
+            }
+        }
+        .hero
+        {
+            width:100%;
+            height:100vh;
+            background-image:linear-gradient(rgba(12,3,51,0.3),rgba(12,3,51,0.3));
+            position:relative;
+            padding:0 5%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        nav{
+            width:100%;
+            position:absolute;
+            top:0;
+            left:0;
+            padding:20px 8%;
+            display: flex;
+            align-items:center;
+            justify-content:space-between;
+         }
+         nav.logo{
+            width:30px;
+            height:30px;
+         }
+         .content h1{
+            font-size:60px;
+            color:#fff;
+            font-weight:600;
+            transition:0.5s;
+            margin-top:50px;
+            text-align:center;
+         }
+         .content h1:hover{
+            -webkit-text-stroke:2px #fff;
+             color:transparent;
+            
+         }
+         .back-video{
+            position:absolute;
+            right:0;
+            bottom:0;
+            z-index:-1;
+         }
+         @media (min-aspect-ratio:16/9)
+         {
+            .back-video{
+                width:100%;
+                height:auto;
+            }
+         }
+         @media (max-aspect-ratio:16/9)
+         {
+            .back-video{
+                width:auto;
+                height:100%;
+            }
+         }
+        .background-image
+         {
+            background-image:url('../static/images/sunrise.webp');
+            background-size:cover;
+            background-repeat:no-repeat;
+            height:100vh;
+            
+         }
+         h1{
+            font-size:50px;
+            font-family:sans-serif;
+            text-align:center;
+            position:relative;
+         }
+         .animate-charcter {
+            text-transform: uppercase;
+            background-image: linear-gradient(-225deg,
+                #231557 0%,
+                #44107a 29%,
+                #ff1361 67%,
+                #fff800 100%);
+            background-size: auto auto;
+            background-clip: border-box;
+            background-size: 200% auto;
+            color: #fff;
+            content: center;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textclip 5s linear infinite;
+            display: inline-block;
+            font-size: 24px;
+          }
+          @keyframes textclip {
+            to {
+              background-position: 200% center;
+            }
+          }
+          <!--gallery-->
+          * {
+            box-sizing: border-box;
+          }
+          
+          body {
+            margin: 0;
+            font-family: Arial;
+          }
+          
+          /* The grid: Four equal columns that floats next to each other */
+          .column {
+            float: left;
+            width: 25%;
+            padding: 10px;
+          }
+          
+          /* Style the images inside the grid */
+          .column img {
+            opacity: 0.8; 
+            cursor: pointer; 
+          }
+          
+          .column img:hover {
+            opacity: 1;
+          }
+          
+          /* Clear floats after the columns */
+          .row:after {
+            content: "";
+            display: table;
+            clear: both;
+          }
+          
+          /* The expanding image container */
+          .container {
+            position: relative;
+            display: none;
+          }
+          
+          /* Expanding image text */
+          #imgtext {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            color: white;
+            font-size: 20px;
+          }
+          
+          /* Closable button inside the expanded image */
+          .closebtn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: white;
+            font-size: 35px;
+            cursor: pointer;
+          }
+          <!--.gradient{
+            background: #77A1D3;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #E684AE, #79CBCA, #77A1D3);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #E684AE, #79CBCA, #77A1D3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+        -->
+          
+          
+         
+    </style>
+
+
+</head>
+
+<body>
+<section>
+<div class="hero">
+    <video autoplay loop muted plays-inline class="back-video">
+        <source src="/static/WhatsApp Video 2024-02-14 at 7.29.49 PM.mp4" type="video/mp4">
+    </video>
+    <!--<nav>
+        <img src="/static/images/logo.png" class="logo">
+    </nav>-->
+    <div class="content">
+        <h1 style="margin-top:320px">STRAWBERRY PLANT DISEASE PREDECTION AI APP</h1>
+    </div>
+</section>
+
+
+    <section>
+        <div class="background-image">
+                <center>   
+              <h1 class="text-center mt-4 mb-4 animate-charcter" style="font-size:35px" ><b>Predict strawberry Crop Disease & Get Cure</b></h1>
+            <form action="/predict" method="post" enctype="multipart/form-data" onsubmit="showloading()">
+                <h2 class="text-center mt-4 mb-4" style="font-size: 2rem;margin-right:100px;text-color:#fff"><b>Drag & Drop Image Here</b></h2>
+                <input type="file" name="image" class="upload"><br><br>
+                <input type="submit" value="Predict">
+
+            </form>
+        </div>
+        
+    </section>
+
+    <section>
+        <center>
+            <h1 class="text-center mt-4 mb-4 animate-charcter" style="font-size:35px" ><b>Photo Gallery</b></h1>
+        </center>
+            <div class="row">
+                <div class="column">
+                  <img src="/static/images/gal1.jpg" alt="" style="width:100%" onclick="myFunction(this);">
+                </div>
+                <div class="column">
+                  <img src="/static/images/gal2.jpg" alt="" style="width:100%" onclick="myFunction(this);">
+                </div>
+                <div class="column">
+                  <img src="/static/images/gal3.jpg" alt="" style="width:100%" onclick="myFunction(this);">
+                </div>
+                <div class="column">
+                  <img src="/static/images/gall (3).jpeg" alt="" style="width:100%" onclick="myFunction(this);">
+                </div>
+                <div class="column">
+                   <img src="/static/images/gal5.jpeg" alt="" style="width:100%" onclick="myFunction(this);">
+                  </div>
+                  <div class="column">
+                    <img src="/static/images/mob4.JPG" alt="" style="width:100%" onclick="myFunction(this);">
+                  </div>
+                  <div class="column">
+                    <img src="/static/images/gall (1).jpeg" alt="" style="width:100%" onclick="myFunction(this);">
+                  </div>
+                  <div class="column">
+                    <img src="/static/images/gall (2).jpeg" alt="" style="width:100%" onclick="myFunction(this);">
+                  </div>
+              </div>
+              
+              <center><div class="container">
+                <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+                <img id="expandedImg" style="width:50%">
+                <div id="imgtext"></div>
+              </div></center>
+ 
+       
+ 
+    </section>
+ 
+
+
+    <section>
+        <div class="container Content-h5">
+
+            <h5 style="font-size: 1rem;" class="text-center my-3 contents">
+                Delivery Contact:
+             </h5>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <script>
+        function myFunction(imgs) {
+          var expandImg = document.getElementById("expandedImg");
+          var imgText = document.getElementById("imgtext");
+          expandImg.src = imgs.src;
+          imgText.innerHTML = imgs.alt;
+          expandImg.parentElement.style.display = "block";
+        }
+        </script>
+
+        
+
+    
+
+</body>
+
+</html>
